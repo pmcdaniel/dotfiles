@@ -20,9 +20,9 @@ git_dirty() {
   else
     if [[ $($git status --porcelain) == "" ]]
     then
-      echo "%{$fg[green]%}$(git_prompt_info)%{$reset_color%}"
+      echo "%{$fg[green]%}[$(git_prompt_info)%]{$reset_color%}"
     else
-      echo "%{$fg[red]%}$(git_prompt_info)%{$reset_color%}"
+      echo "%{$fg[red]%}[$(git_prompt_info)%]{$reset_color%}"
     fi
   fi
 }
@@ -42,7 +42,7 @@ need_push () {
   then
     echo ""
   else
-    echo " with %{$fg_bold[magenta]%}*%{$reset_color%} "
+    echo "%{$fg_bold[magenta]%}*%{$reset_color%}"
   fi
 }
 
