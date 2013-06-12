@@ -39,3 +39,6 @@ do
 done
 
 unset config_files
+
+# THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
+[[ -s "/Users/pmcdaniel/.gvm/bin/gvm-init.sh" ]] && source "/Users/pmcdaniel/.gvm/bin/gvm-init.sh"
