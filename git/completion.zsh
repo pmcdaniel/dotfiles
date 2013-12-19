@@ -7,3 +7,10 @@ if test -f $completion
 then
   source $completion
 fi
+
+gitflowcompletion='$(brew --prefix)/share/zsh/site-functions/git-flow-completion.zsh'
+
+if test -f $gitflowcompletion
+then
+  source $gitflowcompletion
+fi
