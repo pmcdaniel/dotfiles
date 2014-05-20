@@ -43,3 +43,5 @@ bindkey '\e[A' history-beginning-search-backward
 bindkey '\e[B' history-beginning-search-forward
 bindkey '\e[1;2C' forward-word
 bindkey '\e[1;2D' backward-word
+bindkey '^[[3~' delete-char
+bindkey '^?' backward-delete-char
