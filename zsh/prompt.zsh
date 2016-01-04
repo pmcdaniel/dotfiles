@@ -47,7 +47,7 @@ need_push () {
 }
 
 directory_name() {
-  echo "%{$fg_bold[cyan]%}%1/%\/%{$reset_color%}"
+  echo "%{$fg[white]%}[%~]%{$reset_color%}"
 }
 
 prompt_time(){
