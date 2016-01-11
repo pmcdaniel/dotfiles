@@ -11,3 +11,4 @@ brew 'rbenv'
 brew 'unrar'
 
 cask 'handbrake'
+cask 'wireshark'
