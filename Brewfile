@@ -12,3 +12,4 @@ brew 'unrar'
 
 cask 'handbrake'
 cask 'wireshark'
+cask 'dropbox'
