@@ -8,6 +8,7 @@ brew 'grc'
 brew 'ruby-build'
 brew 'rbenv'
 brew 'unrar'
+brew 'python3'
 
 cask 'handbrake'
 cask 'wireshark'
