@@ -9,6 +9,7 @@ brew 'ruby-build'
 brew 'rbenv'
 brew 'unrar'
 brew 'python3'
+brew 'node'
 
 cask 'handbrake'
 cask 'wireshark'
