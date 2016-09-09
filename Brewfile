@@ -10,6 +10,7 @@ brew 'rbenv'
 brew 'unrar'
 brew 'python3'
 brew 'node'
+brew 'tmux'
 
 cask 'handbrake'
 cask 'wireshark'
