@@ -1,4 +1,5 @@
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Development
 
-source /usr/local/bin/virtualenvwrapper.sh
+brew_prefix=`brew --prefix`
+test -e "${brew_prefix}/bin/virtualenvwrapper.sh" && source "${brew_prefix}/bin/virtualenvwrapper.sh"
