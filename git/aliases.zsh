@@ -1,3 +1,11 @@
+# Use `hub` as our git wrapper:
+# https://hub.github.com/
+hub_path=$(which hub)
+if (( $+commands[hub] ))
+then
+	alias git=$hub_path
+fi
+
 # Git aliases
 # Modified from https://github.com/holman/dotfiles/blob/master/git/aliases.zsh
 alias gl='git pull --prune'
