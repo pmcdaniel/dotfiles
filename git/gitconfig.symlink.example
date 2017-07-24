@@ -6,6 +6,8 @@
         email = AUTHOREMAIL
 [credential]
         helper = GIT_CREDENTIAL_HELPER
+[hub]
+	protocol = https
 [alias]
         co = checkout
         promote = !$ZSH/bin/git-promote
