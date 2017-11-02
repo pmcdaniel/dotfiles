@@ -7,6 +7,8 @@ brew 'coreutils'
 brew 'grc'
 brew 'node'
 brew 'python3'
+brew 'ruby-build'
+brew 'rbenv'
 brew 'tmux'
 brew 'unrar'
 
