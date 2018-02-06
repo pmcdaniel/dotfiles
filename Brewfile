@@ -1,6 +1,7 @@
 cask_args appdir: '/Applications'
 
 tap 'homebrew/bundle'
+tap 'caskroom/versions'
 
 brew 'ack'
 brew 'coreutils'
@@ -14,7 +15,7 @@ brew 'unrar'
 
 cask 'dropbox'
 cask 'handbrake'
-cask 'firefox'
+cask 'firefox-developer-edition'
 cask 'google-chrome'
 cask 'skitch'
 cask 'visual-studio-code'
