@@ -27,6 +27,12 @@ defaults write NSGlobalDomain InitialKeyRepeat -int 10
 defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true
 defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
 
+# do not automatically rearrange Spaces based on most recent use
+defaults write com.apple.dock mru-spaces -bool false
+
+# do not switch Spaces when opening application windows
+defaults write NSGlobalDomain AppleSpacesSwitchOnActivate -bool false
+
 # automatically hide and show the dock
 defaults write com.apple.dock autohide -bool true
 
