@@ -24,8 +24,8 @@ chflags nohidden ~/Library
 defaults write -g ApplePressAndHoldEnabled -bool false
 
 # Set a really fast key repeat.
-defaults write NSGlobalDomain KeyRepeat -int 1
-defaults write NSGlobalDomain InitialKeyRepeat -int 10
+defaults write NSGlobalDomain KeyRepeat -int 2
+defaults write NSGlobalDomain InitialKeyRepeat -int 35
 
 # do not automatically rearrange Spaces based on most recent use
 defaults write com.apple.dock mru-spaces -bool false
