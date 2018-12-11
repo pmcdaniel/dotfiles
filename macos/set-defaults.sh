@@ -27,6 +27,12 @@ defaults write NSGlobalDomain InitialKeyRepeat -int 10
 defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true
 defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
 
+# automatically hide and show the dock
+defaults write com.apple.dock autohide -bool true
+
+# remove the auto-hiding dock delay
+defaults write com.apple.dock autohide-delay -float 0
+
 # bottom-left hot corner -> disable
 defaults write com.apple.dock wvous-bl-corner -int 0
 defaults write com.apple.dock wvous-bl-modifier -int 0
