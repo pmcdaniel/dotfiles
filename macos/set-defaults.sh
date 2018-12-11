@@ -7,6 +7,10 @@
 #
 # Run ./set-defaults.sh and you'll be good to go.
 
+###############################################################################
+# Finder
+###############################################################################
+
 # Use AirDrop over every interface. srsly this should be a default.
 defaults write com.apple.NetworkBrowser BrowseAllInterfaces 1
 
@@ -20,12 +24,20 @@ defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
 # Show the ~/Library folder.
 chflags nohidden ~/Library
 
+###############################################################################
+# Keyboard
+###############################################################################
+
 # Disable press-and-hold for keys in favor of key repeat.
 defaults write -g ApplePressAndHoldEnabled -bool false
 
 # Set a really fast key repeat.
 defaults write NSGlobalDomain KeyRepeat -int 2
 defaults write NSGlobalDomain InitialKeyRepeat -int 35
+
+###############################################################################
+# Dock, Hot Corners, Spaces
+###############################################################################
 
 # do not automatically rearrange Spaces based on most recent use
 defaults write com.apple.dock mru-spaces -bool false
@@ -54,6 +66,10 @@ defaults write com.apple.dock wvous-br-modifier -int 0
 # top-right hot corner -> disable
 defaults write com.apple.dock wvous-tr-corner -int 0
 defaults write com.apple.dock wvous-tr-modifier -int 0
+
+###############################################################################
+# Safari
+###############################################################################
 
 # Hide Safari's bookmark bar.
 defaults write com.apple.Safari ShowFavoritesBar -bool false
