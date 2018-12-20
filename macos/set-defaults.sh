@@ -71,8 +71,8 @@ defaults write com.apple.screencapture disable-shadow -bool true
 defaults write -g ApplePressAndHoldEnabled -bool false
 
 # Set a really fast key repeat.
-defaults write NSGlobalDomain KeyRepeat -int 2
-defaults write NSGlobalDomain InitialKeyRepeat -int 35
+defaults write NSGlobalDomain KeyRepeat -int 1
+defaults write NSGlobalDomain InitialKeyRepeat -int 10
 
 ###############################################################################
 # Dock, Hot Corners, Spaces
