@@ -14,7 +14,6 @@ brew 'zsh'
 
 cask 'alfred'
 cask 'caffeine'
-cask 'dashlane'
 cask 'firefox-developer-edition'
 cask 'google-chrome'
 cask 'hex-fiend'
