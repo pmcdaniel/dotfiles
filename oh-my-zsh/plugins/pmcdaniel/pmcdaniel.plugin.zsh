@@ -1,5 +1,13 @@
-#!/bin/sh
-#
+# Quick Directory tab completions
+c() { cd ~/Development/$1; }
+_c() { _files -W ~/Development -/; }
+compdef _c c
+
+h() { cd ~/$1; }
+_h() { _files -W ~/ -/; }
+compdef _h h
+
+# Switch Java Version function
 # Usage: sjv <version>
 # Description: Switches the version of Java currently referenced by java_home.  <version> should be of the form 1.7, 1.8
 sjv () {
