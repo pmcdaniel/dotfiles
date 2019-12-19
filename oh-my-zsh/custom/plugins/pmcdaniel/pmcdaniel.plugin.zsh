@@ -15,3 +15,8 @@ sjv () {
 	export JAVA_HOME=`/usr/libexec/java_home -v $java_version`
 	java -version
 }
+
+# My aliases
+alias reload!='. ~/.zshrc' # Reloads my zsh configurion
+alias cls='clear' # Clear screen
+alias pubkey="clipcopy ~/.ssh/id_rsa.pub | echo '=> Public key copied to pasteboard.'"
