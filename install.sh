@@ -2,7 +2,6 @@
 #
 # Configures git and symlinks files into place
 
-cd "$(dirname "$0")/.."
 DOTFILES_ROOT=$(pwd -P)
 
 set -e
