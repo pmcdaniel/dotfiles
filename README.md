@@ -1,42 +1,35 @@
 # dotfiles
 
-These are my version of the excellent dotfiles provided by [Zach Holman](http://github.com/holman). His original work can be found [here](http://github.com/holman/dotfiles)
+These are my version of dotfiles.  There are many like it, but this one is mine.  They are now based on [Oh My Zsh](https://ohmyz.sh) and therefore a required component of using these dotfiles.
 
-## components
+## Prerequisites
 
-There's a few special files in the hierarchy.
+You must install Oh My Zsh with the following command:
 
-- **bin/**: Anything in `bin/` will get added to your `$PATH` and be made
-  available everywhere.
-- **Brewfile**: This is a list of applications for [Homebrew Cask](http://caskroom.io) to install: things like Chrome and 1Password and Adium and stuff. Might want to edit this file before running any initial setup.
-- **topic/\*.zsh**: Any files ending in `.zsh` get loaded into your
-  environment.
-- **topic/path.zsh**: Any file named `path.zsh` is loaded first and is
-  expected to setup `$PATH` or similar.
-- **topic/completion.zsh**: Any file named `completion.zsh` is loaded
-  last and is expected to setup autocomplete.
-- **topic/\*.symlink**: Any files ending in `*.symlink` get symlinked into
-  your `$HOME`. This is so you can keep all of those versioned in your dotfiles
-  but still keep those autoloaded files in your home directory. These get
-  symlinked in when you run `script/bootstrap`.
+```sh
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
 
-## install
+## Install
 
-Run this:
+Run:
 
 ```sh
 git clone https://github.com/pmcdaniel/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
-script/bootstrap
+./install.sh
 ```
 
-This will symlink the appropriate files in `.dotfiles` to your home directory.
-Everything is configured and tweaked within `~/.dotfiles`.
+This will ask you for your author name and email address to setup the git config and then symlink the appropriate files in `.dotfiles` to your home directory.  All changes should be done in the `~/.dotfiles` directory
 
-The main file you'll want to change right off the bat is `zsh/zshrc.symlink`,
-which sets up a few paths that'll be different on your particular machine.
+This will also set defaults on macOS based on the `macos/set-defaults.sh` script.
 
-`dot` is a simple script that installs some dependencies, sets sane macOS
-defaults, and so on. Tweak this script, and occasionally run `dot` from
-time to time to keep your environment fresh and up-to-date. You can find
-this script in `bin/`.
+## Optional Things
+
+### Homebrew
+
+I like homebrew and to install it run the following command:
+
+```sh
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+```
