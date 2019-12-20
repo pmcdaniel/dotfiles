@@ -73,3 +73,10 @@ symlink_dotfiles () {
 
 setup_gitconfig
 symlink_dotfiles
+
+if [ "$(uname -s)" == "Darwin" ]
+then
+   info 'setting macOS defaults'
+   $DOTFILES/macos/set-defaults.sh
+   success 'defaults set'
+fi
