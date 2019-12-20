@@ -19,6 +19,11 @@ source $ZSH/oh-my-zsh.sh
 export JAVA8_HOME=`/usr/libexec/java_home -v 1.8`
 export JAVA_HOME=$JAVA8_HOME
 
+# Homebrew Security Options
+export HOMEBREW_NO_ANALYTICSzs=1
+export HOMEBREW_NO_INSECURE_REDIRECT=1
+export HOMEBREW_CASK_OPTS=--require-sha
+
 # Stash your environment variables in ~/.localrc.  This means they'll stay out
 # of your main dotfiles repository (which may be public, like this one), but
 # you'll have access to them in your scripts.
