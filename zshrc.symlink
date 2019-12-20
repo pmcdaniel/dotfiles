@@ -1,5 +1,5 @@
 # Pre-Init Oh-My-Zsh
-DOTFILES='~/.dotfiles'
+DOTFILES=$HOME/.dotfiles
 export EDITOR='code'
 
 export PATH="/usr/local/bin:/usr/local/sbin:$DOTFILES/bin:$PATH"
@@ -13,7 +13,7 @@ DISABLE_AUTO_UPDATE="true"
 
 plugins=(git brew extract pmcdaniel)
 
-soruce $ZSH/oh-my-zsh.sh
+source $ZSH/oh-my-zsh.sh
 
 # Post-Init Oh-My-Zsh
 export JAVA8_HOME=`/usr/libexec/java_home -v 1.8`
