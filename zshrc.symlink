@@ -1,6 +1,9 @@
 # Pre-Init Oh-My-Zsh
+DOTFILES='~/.dotfiles'
 export EDITOR='code'
 
+export PATH="/usr/local/bin:/usr/local/sbin:$DOTFILES/bin:$PATH"
+export MANPATH="/usr/local/man:/usr/local/git/man:$MANPATH"
 
 # Init Oh-My-Zsh
 ZSH=$HOME/.oh-my-zsh
@@ -10,6 +13,10 @@ DISABLE_AUTO_UPDATE="true"
 plugins=(git brew extract pmcdaniel)
 
 soruce $ZSH/oh-my-zsh.sh
+
+# Post-Init Oh-My-Zsh
+export JAVA8_HOME=`/usr/libexec/java_home -v 1.8`
+export JAVA_HOME=$JAVA8_HOME
 
 # Stash your environment variables in ~/.localrc.  This means they'll stay out
 # of your main dotfiles repository (which may be public, like this one), but
