@@ -8,4 +8,4 @@ bindkey '^E' end-of-line
 
 # My Custom ZSH options
 setopt NO_LIST_BEEP # Turns beep off for ambiguous completions
-setopt HIST_REDUCE_BLANK
+setopt HIST_REDUCE_BLANKS
