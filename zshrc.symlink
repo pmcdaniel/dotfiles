@@ -15,10 +15,6 @@ plugins=(git brew extract pmcdaniel)
 
 source $ZSH/oh-my-zsh.sh
 
-# Post-Init Oh-My-Zsh
-export JAVA8_HOME=`/usr/libexec/java_home -v 1.8`
-export JAVA_HOME=$JAVA8_HOME
-
 # Homebrew Security Options
 export HOMEBREW_NO_ANALYTICSzs=1
 export HOMEBREW_NO_INSECURE_REDIRECT=1
@@ -35,7 +31,7 @@ fi
 # Setup iTerm2 integrations
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-# Setup SDKMan
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="${HOME}/.sdkman"
-[[ -s "${SDKMAN_DIR}/bin/sdkman-init.sh" ]] && source "${SDKMAN_DIR}/bin/sdkman-init.sh"
+if (( $+commands[jenv] ))
+then
+  eval "$(jenv init -)"
+fi
