@@ -2,8 +2,23 @@
 DOTFILES=$HOME/.dotfiles
 export EDITOR='code'
 
-export PATH="/usr/local/bin:/usr/local/sbin:$DOTFILES/bin:$PATH"
-export MANPATH="/usr/local/man:/usr/local/git/man:$MANPATH"
+# Homebrew Security Options
+export HOMEBREW_NO_ANALYTICSzs=1
+export HOMEBREW_NO_INSECURE_REDIRECT=1
+export HOMEBREW_CASK_OPTS=--require-sha
+
+# Setup Brew ShellEnv
+local homebrew_base
+local arch_name="$(uname -m)"
+if [ "${arch_name}" = "x86_64" ]; then
+  homebrew_base='/usr/local'
+elif [ "${arch_name}" = "arm64" ]; then
+  homebrew_base='/opt/homebrew'
+else
+  echo "Unknown architecure: ${arch_name}"
+fi
+
+eval $(${homebrew_base}/bin/brew shellenv)
 
 # Init Oh-My-Zsh
 ZSH=$HOME/.oh-my-zsh
@@ -14,11 +29,6 @@ DISABLE_AUTO_UPDATE="true"
 plugins=(git brew extract pmcdaniel)
 
 source $ZSH/oh-my-zsh.sh
-
-# Homebrew Security Options
-export HOMEBREW_NO_ANALYTICSzs=1
-export HOMEBREW_NO_INSECURE_REDIRECT=1
-export HOMEBREW_CASK_OPTS=--require-sha
 
 # Stash your environment variables in ~/.localrc.  This means they'll stay out
 # of your main dotfiles repository (which may be public, like this one), but
