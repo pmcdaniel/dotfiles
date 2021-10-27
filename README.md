@@ -33,3 +33,17 @@ I like homebrew and to install it run the following command:
 ```sh
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
+
+### Setting Hostname
+I did not add this to the scripts, but typically change the hostname of my machines.  Where is a quick set of commands to do it
+
+```sh
+COMPUTER_NAME="pmcdaniel"
+
+sudo scutil --set ComputerName "${COMPUTER_NAME}"
+sudo scutil --set HostName "${COMPUTER_NAME}"
+sudo scutil --set LocalHostName "${COMPUTER_NAME}"
+sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "${COMPUTER_NAME}"
+```
+
+
