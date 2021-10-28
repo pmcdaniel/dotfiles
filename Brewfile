@@ -11,7 +11,7 @@ brew "jq"
 brew "mas"
 brew "neovim"
 brew "nmap"
-brew "unrar"
+brew "rar"
 
 cask "1password"
 cask "alfred"
