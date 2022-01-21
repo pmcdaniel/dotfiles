@@ -50,5 +50,6 @@ fi
 # Setup Python Environment if it exists
 if (( $+commands[pyenv] ))
 then
+  eval "$(pyenv init --path)"
   eval "$(pyenv init -)"
 fi
