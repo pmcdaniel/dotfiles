@@ -41,7 +41,14 @@ fi
 # Setup iTerm2 integrations
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
+# Setup Java Environment if it exists
 if (( $+commands[jenv] ))
 then
   eval "$(jenv init -)"
+fi
+
+# Setup Python Environment if it exists
+if (( $+commands[pyenv] ))
+then
+  eval "$(pyenv init -)"
 fi
