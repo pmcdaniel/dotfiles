@@ -7,15 +7,6 @@ h() { cd ~/$1; }
 _h() { _files -W ~/ -/; }
 compdef _h h
 
-# Switch Java Version function
-# Usage: sjv <version>
-# Description: Switches the version of Java currently referenced by java_home.  <version> should be of the form 1.7, 1.8
-sjv () {
-	local java_version=$1
-	export JAVA_HOME=`/usr/libexec/java_home -v $java_version`
-	java -version
-}
-
 # My aliases
 alias reload!='. ~/.zshrc' # Reloads my zsh configurion
 alias cls='clear' # Clear screen
