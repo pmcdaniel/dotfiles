@@ -1,4 +1,62 @@
+" Use Vim settings, rather than Vi settings
+" This must be first, because it changes other options as a side effect
+set nocompatible
+
+" Allow backspacing over everything in insert mode
+set backspace=indent,eol,start
+
+" Enable type file detection, enable plugins and load plugins for detected
+" file types and load an indent file for the detected file type.
+filetype indent plugin on
+
+" Turn syntax highlight on.
 syntax on
 
-" Wrap gitcommit file types at the appropriate length
-filetype indent plugin on
+" Turn on line numbers
+set number
+
+" Highlight cursor line underneath the cursor horizontally.
+set cursorline
+
+" Show the cursor position all the time
+set ruler
+
+" Set shift width to 4 spaces, tab width to 4 columns, and use
+" space characters instead of tabs
+set shiftwidth=4
+set tabstop=4
+set expandtab
+
+" Do not save backup files.
+set nobackup
+
+" Do not let cursor scroll below or above 10 lines when scrolling
+set scrolloff=10
+
+" Do not wrap lines.
+set nowrap
+
+" While searching through a file incrementally highlight matching characetrs as you type
+set incsearch
+
+" Ignore capital letters during search, unless searching with capital letters
+set ignorecase
+set smartcase
+
+" Show partial command you type in last line of screen
+set showcmd
+
+" Show the mode you are on the last line.
+set showmode
+
+" Show matching words during a search.
+set showmatch
+
+" Use highlight when doing a search.
+set hlsearch
+
+" Set the commands to save in history.
+set history=50
+
+" Always disable the status line.
+set laststatus=2
