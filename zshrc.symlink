@@ -26,7 +26,7 @@ ZSH_CUSTOM=$DOTFILES/oh-my-zsh
 ZSH_THEME="pmcdaniel"
 DISABLE_AUTO_UPDATE="true"
 
-plugins=(git brew extract pmcdaniel)
+plugins=(git brew extract grc pmcdaniel)
 
 source $ZSH/oh-my-zsh.sh
 
