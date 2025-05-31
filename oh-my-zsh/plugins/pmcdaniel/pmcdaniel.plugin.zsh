@@ -10,7 +10,7 @@ compdef _h h
 # My aliases
 alias reload!='. ~/.zshrc' # Reloads my zsh configurion
 alias cls='clear' # Clear screen
-alias pubkey="clipcopy ~/.ssh/id_rsa.pub | echo '=> Public key copied to pasteboard.'"
+alias pubkey="clipcopy ~/.ssh/id_ed25519.pub | echo '=> Public key copied to pasteboard.'"
 
 # Convert vi and vim to nvim
 alias vi="vim"
