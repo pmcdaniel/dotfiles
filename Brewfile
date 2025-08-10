@@ -6,6 +6,8 @@ brew "neovim"
 brew "nmap"
 brew "rar"
 brew "ripgrep"
+brew "tree-sitter-cli"
+brew "node"
 
 cask "1password"
 cask "alfred"
