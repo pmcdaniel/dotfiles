@@ -8,6 +8,7 @@ brew "rar"
 brew "ripgrep"
 brew "tree-sitter-cli"
 brew "node"
+brew "wget"
 
 cask "1password"
 cask "alfred"
