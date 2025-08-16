@@ -13,4 +13,5 @@ alias cls='clear' # Clear screen
 alias pubkey="clipcopy ~/.ssh/id_ed25519.pub | echo '=> Public key copied to pasteboard.'"
 
 # Convert vi and vim to nvim
-alias vi="vim"
+alias vi="nvim"
+alias vim="nvim"
