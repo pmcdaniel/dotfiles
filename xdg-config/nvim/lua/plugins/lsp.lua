@@ -63,7 +63,9 @@ return {
             })
         })
 
+        vim.diagnostic.enable = true
         vim.diagnostic.config({
+            virtual_text = true,
             float = {
                 focusable = false,
                 style = "minimal",
