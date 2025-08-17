@@ -6,13 +6,9 @@
         wtf     = !$ZSH/bin/git-wtf
         count   = !git shortlog -sn
 [color]
-        diff = auto
-        status = auto
-        branch = auto
-        ui = true
+        ui = auto
 [core]
         excludesfile = ~/.gitignore
-        editor = vim
 [apply]
         whitespace = nowarn
 [mergetool]
