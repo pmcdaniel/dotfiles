@@ -55,8 +55,8 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 # Setup Python Environment if it exists
 if (( $+commands[pyenv] ))
 then
-  eval "$(pyenv init --path)"
-  eval "$(pyenv init -)"
+  export PYENV_ROOT="$HOME/.pyenv"
+  eval "$(pyenv init - zsh)"
 fi
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
