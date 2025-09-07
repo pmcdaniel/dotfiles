@@ -3,7 +3,14 @@ return {
     dependencies = { 'saghen/blink.cmp'},
     opts = {
         servers = {
-            lua_ls = {}
+            lua_ls = {},
+            basedpyright = {
+                settings = {
+                    basedpyright = {
+                        analysis = { typeCheckingMode = "standard", },
+                    },
+                },
+            },
         }
     },
     config = function(_, opts)
