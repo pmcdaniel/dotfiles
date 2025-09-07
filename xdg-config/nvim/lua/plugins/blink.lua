@@ -26,13 +26,16 @@ return {
                         },
                         kind = {
                             highlight = function(ctx)
-                                local _, hl, _ = require("mini.icons"),get("lsp", ctx.kind)
+                                local _, hl, _ = require("mini.icons").get("lsp", ctx.kind)
                                 return hl
                             end,
                         }
                     }
                 }
-            }
+            },
+            list = {
+                selection = { preselect = false, auto_insert = false }
+            },
         },
         snippets = { preset = 'luasnip' },
         sources = {
