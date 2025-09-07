@@ -11,7 +11,7 @@ return {
             "tailwindcss",
             "clangd",
             "ruff",
-            "pyright",
+            "basedpyright",
         }
     }
 }
