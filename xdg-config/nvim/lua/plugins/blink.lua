@@ -6,7 +6,10 @@ return {
     ---@module 'blink.cmp'
     ---@type blink.cmp.Config
     opts = {
-        keymap = { preset = 'enter' },
+        enabled = function ()
+            return not vim.tbl_contains({"gitcommit", "markdown"}, vim.bo.filetype)
+        end,
+        keymap = { preset = 'super-tab' },
         appearance = { nerd_font_variant = 'mono' },
         completion = {
             documentation = { auto_show = false },
@@ -32,9 +35,6 @@ return {
                         }
                     }
                 }
-            },
-            list = {
-                selection = { preselect = false, auto_insert = false }
             },
         },
         snippets = { preset = 'luasnip' },
