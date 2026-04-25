@@ -1,0 +1,34 @@
+[include]
+	path = ~/.gitconfig.local
+[alias]
+	wtf = !$DOT/bin/git-wtf
+	count = !git shortlog -sn
+[apply]
+	whitespace = nowarn
+[color]
+	ui = auto
+[commit]
+	gpgsign = true
+[core]
+	excludesfile = ~/.gitignore
+	editor = vim
+[difftool]
+	prompt = false
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	allowedSignersFile = ~/.ssh/allowed_signers
+[help]
+	autocorrect = immediate
+[init]
+	defaultBranch = main
+[mergetool]
+	keepBackup = false
+[pull]
+	rebase = true
+[push]
+	default = current
+[tag]
+	gpgsign = true
+
+

@@ -1,0 +1,6 @@
+[user]
+	name = AUTHOR_NAME
+	email = AUTHOR_EMAIL
+	signingkey = AUTHOR_KEY
+[credential]
+	helper = GIT_CREDENTIAL_HELPER
