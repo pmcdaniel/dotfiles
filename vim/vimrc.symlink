@@ -1,0 +1,11 @@
+" Use vim settings, rather than vi settings
+set nocompatible
+
+" Enable type file detection to wrap gitcommit file types.
+filetype indent plugin on
+
+" Turn syntax highlight on.
+syntax on
+
+" Turn on line numbers
+set number
