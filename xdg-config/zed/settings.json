@@ -1,0 +1,257 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "collaboration_panel": {
+    "button": false,
+  },
+  "tabs": {
+    "file_icons": true,
+    "git_status": true,
+    "show_diagnostics": "all",
+  },
+  "diagnostics": {
+    "inline": {
+      "enabled": true,
+    },
+  },
+  "edit_predictions": {
+    "disabled_globs": ["**/.gnupg", "**/.ssh", "**/ssh"],
+  },
+  "file_finder": {
+    "include_ignored": "all",
+  },
+  "file_scan_exclusions": [
+    "**/__pycache__",
+    "**/.coverage",
+    "**/.DS_Store",
+    "**/.git",
+    "**/.pytest_cache",
+    "**/.ruff_cache",
+    "**/.venv",
+    "**/build",
+    "**/coverage",
+    "**/node_modules",
+  ],
+  "file_types": {
+    "Dockerfile": ["Dockerfile*"],
+    "Helm": [
+      "**/helmfile.d/**/*.yaml",
+      "**/helmfile.d/**/*.yml",
+      "**/templates/**/*.tpl",
+      "**/templates/**/*.yaml",
+      "**/templates/**/*.yml",
+    ],
+  },
+  "inlay_hints": {
+    "enabled": true,
+  },
+  "git": {
+    "inline_blame": {
+      "enabled": true,
+    },
+  },
+  "show_whitespaces": "trailing",
+  "relative_line_numbers": "enabled",
+  "autosave": {
+    "after_delay": {
+      "milliseconds": 1000,
+    },
+  },
+  "unnecessary_code_fade": 0.5,
+  "proxy": "",
+  "buffer_font_family": "FiraCode Nerd Font",
+  "buffer_font_features": {
+    "calt": true,
+    "ss04": true,
+  },
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false,
+  },
+  "vim_mode": true,
+  "agent_servers": {
+    "codex-acp": {
+      "type": "registry",
+    },
+  },
+  "base_keymap": "VSCode",
+  "icon_theme": "Zed (Default)",
+  "ui_font_size": 16,
+  "buffer_font_size": 15,
+  "theme": {
+    "mode": "dark",
+    "light": "Gruvbox Light",
+    "dark": "Gruvbox Dark Hard",
+  },
+  "languages": {
+    "Go": {
+      "preferred_line_length": 120,
+      "tab_size": 2,
+    },
+    "JSON": {
+      "code_actions_on_format": {
+        "source.fixAll.oxlint": true,
+      },
+      "formatter": "language_server",
+      "language_servers": ["oxlint"],
+      "prettier": {
+        "allowed": false,
+      },
+      "tab_size": 2,
+    },
+    "JSONC": {
+      "code_actions_on_format": {
+        "source.fixAll.oxlint": true,
+      },
+      "formatter": "language_server",
+      "language_servers": ["oxlint"],
+      "prettier": {
+        "allowed": false,
+      },
+      "tab_size": 2,
+    },
+    "JavaScript": {
+      "code_actions_on_format": {
+        "source.fixAll.oxlint": true,
+      },
+      "formatter": "language_server",
+      "language_servers": ["oxlint"],
+      "prettier": {
+        "allowed": false,
+      },
+      "tab_size": 2,
+    },
+    "Markdown": {
+      "tab_size": 2
+    },
+    "Python": {
+      "code_actions_on_format": {
+        "source.fixAll.ruff": true,
+        "source.organizeImports.ruff": true
+      },
+      "formatter": "language_server",
+      "language_servers": [
+        "ty",
+        "ruff",
+        "!basedpyright",
+        "!pyright",
+        "!pylsp"
+      ],
+      "preferred_line_length": 120
+    },
+    "Shell Script": {
+      "formatter": {
+        "external": {
+          "command": "shfmt",
+          "arguments": [
+            "--filename",
+            "{buffer_path}",
+            "--indent",
+            "2"
+          ]
+        }
+      },
+      "tab_size": 2
+    },
+    "TypeScript": {
+      "code_actions_on_format": {
+        "source.fixAll.oxlint": true,
+      },
+      "formatter": "language_server",
+      "language_servers": [
+        "vtsls",
+        "oxlint"
+      ],
+      "prettier": {
+        "allowed": false,
+      },
+      "tab_size": 2,
+    },
+    "XML": {
+      "tab_size": 2
+    },
+    "YAML": {
+      "formatter": "prettier",
+      "tab_size": 2
+    }
+  },
+  "lsp": {
+    "json-language-server": {
+      "initialization_options": {
+        "provideFormatter": true
+      },
+      "settings": {
+        "json": {
+          "format": {
+            "enable": true
+          },
+          "validate": {
+            "enable": true
+          }
+        }
+      }
+    },
+    "ruff": {
+      "initialization_options": {
+        "settings": {
+          "codeAction": {
+            "disableRuleComment": {
+              "enable": false
+            },
+            "fixViolation": {
+              "enable": false
+            }
+          },
+          "configurationPreference": "filesystemFirst",
+          "fixAll": true,
+          "format": {
+            "backend": "uv",
+            "preview": true
+          },
+          "lint": {
+            "enable": false
+          },
+          "organizeImports": true,
+          "showSyntaxErrors": true
+        }
+      }
+    },
+    "tailwindcss-language-server": {
+      "settings": {
+        "experimental": {
+          "classRegex": [
+            "\\.className\\s*[+]?=\\s*['\"]([^'\"]*)['\"]",
+            "\\.setAttributeNS\\(.*,\\s*['\"]class['\"],\\s*['\"]([^'\"]*)['\"]",
+            "\\.setAttribute\\(['\"]class['\"],\\s*['\"]([^'\"]*)['\"]",
+            "\\.classList\\.add\\(['\"]([^'\"]*)['\"]",
+            "\\.classList\\.remove\\(['\"]([^'\"]*)['\"]",
+            "\\.classList\\.toggle\\(['\"]([^'\"]*)['\"]",
+            "\\.classList\\.contains\\(['\"]([^'\"]*)['\"]",
+            "\\.classList\\.replace\\(\\s*['\"]([^'\"]*)['\"]",
+            "\\.classList\\.replace\\([^,)]+,\\s*['\"]([^'\"]*)['\"]"
+          ]
+        }
+      }
+    },
+    "typescript-language-server": {
+      "initialization_options": {
+        "preferences": {
+          "includeInlayEnumMemberValueHints": true,
+          "includeInlayFunctionLikeReturnTypeHints": true,
+          "includeInlayFunctionParameterTypeHints": true,
+          "includeInlayParameterNameHints": "all",
+          "includeInlayParameterNameHintsWhenArgumentMatchesName": true,
+          "includeInlayPropertyDeclarationTypeHints": true,
+          "includeInlayVariableTypeHints": true,
+          "includeInlayVariableTypeHintsWhenTypeMatchesName": true
+        }
+      }
+    }
+  },
+}
