@@ -1,4 +1,5 @@
 git/gitconfig.local.symlink
+.install-manifest
 
 # zed
 xdg-config/zed/conversations
