@@ -1,0 +1,7 @@
+#!/bin/zsh
+#
+# Quickly jump into your development/projects directory
+# And provide tab completions
+function c() {
+  cd $PROJECTS/$1
+}
