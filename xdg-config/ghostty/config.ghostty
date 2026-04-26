@@ -1,0 +1,9 @@
+theme = Catppuccin Mocha
+
+window-width = 140
+window-height = 40
+
+font-family = FiraCode Nerd Font Mono Ret
+font-size = 14
+
+keybind = super+enter=text:\n
