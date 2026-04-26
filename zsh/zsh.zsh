@@ -7,9 +7,9 @@ fpath=($DOT_FILES/functions $fpath)
 autoload -U $DOT_FILES/functions/*(:t)
 
 # History Configuration
-setopt HISTFILE=~/.zsh_history
-setopt HISTSIZE=10000
-setopt SAVEHIST=10000
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
 
 # History Behavior
 setopt HIST_VERIFY
