@@ -18,7 +18,7 @@ Snacks.setup({
         enabled = true,
         ui_select = true,
         layout = {
-            present = 'vscode',
+            preset = 'vscode',
         },
         sources = {
             files = {
