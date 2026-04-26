@@ -1,0 +1,17 @@
+#Homebrew Options
+export HOMEBREW_NO_INSECURE_REDIRECT=1
+export HOMEBREW_CASK_OPTS=--require-sha
+export HOMEBREW_NO_ENV_HINTS=1
+
+# Setup Homebrew ShellEnv
+local _homebrew_base
+local _arch_name="$(uname -m)"
+if [ "${_arch_name}" = "x86_64" ]; then
+  _homebrew_base='/usr/local'
+elif [ "${_arch_name}" = "arm64" ]; then
+  _homebrew_base='/opt/homebrew'
+else
+  echo "Unknown architecture: ${_arch_name}"
+fi
+
+eval $(${_homebrew_base}/bin/brew shellenv)

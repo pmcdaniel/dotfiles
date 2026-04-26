@@ -1,0 +1,88 @@
+# shortcut to these dotfiles
+export DOT_FILES=$HOME/.dotfiles
+
+# projects folder used in `c [tab]`
+export PROJECTS=$HOME/Development
+
+# Local environment variables and functions should live in `$HOME/.localrc`
+# This will allow them to stay out of the repository, but you'll have access to
+# them in your scripts
+if [[ -a $HOME/.localrc ]]
+then
+  source $HOME/.localrc
+fi
+
+_dotfiles_topic_dirs=()
+for _dotfiles_topic_dir in "$DOT_FILES"/*(/N)
+do
+  case "${_dotfiles_topic_dir:t}" in
+    .git|bin|functions|xdg-config)
+      continue
+      ;;
+  esac
+
+  _dotfiles_topic_dirs+=("$_dotfiles_topic_dir")
+done
+
+_dotfiles_source_files=()
+for _dotfiles_topic_dir in "${_dotfiles_topic_dirs[@]}"
+do
+  _dotfiles_source_files+=("$_dotfiles_topic_dir"/*_path.zsh(N.))
+done
+
+for _dotfiles_source_file in "${_dotfiles_source_files[@]}"
+do
+  source "$_dotfiles_source_file"
+done
+
+_dotfiles_source_files=()
+for _dotfiles_topic_dir in "${_dotfiles_topic_dirs[@]}"
+do
+  for _dotfiles_source_file in "$_dotfiles_topic_dir"/*.zsh(N.)
+  do
+    case "${_dotfiles_source_file:t}" in
+      *_path.zsh|*_completion.zsh)
+        continue
+        ;;
+    esac
+
+    _dotfiles_source_files+=("$_dotfiles_source_file")
+  done
+done
+
+for _dotfiles_source_file in "${_dotfiles_source_files[@]}"
+do
+  source "$_dotfiles_source_file"
+done
+
+autoload -Uz compinit
+_dotfiles_zcompdump_dir="${XDG_CACHE_HOME:-$HOME/.cache}/zsh"
+_dotfiles_zcompdump="$_dotfiles_zcompdump_dir/.zcompdump-${ZSH_VERSION}"
+
+if [[ ! -d "$_dotfiles_zcompdump_dir" ]]
+then
+  mkdir -p "$_dotfiles_zcompdump_dir"
+fi
+
+_dotfiles_zcompdump_files=("$_dotfiles_zcompdump"(N.mh-24))
+if (( ${#_dotfiles_zcompdump_files} ))
+then
+  compinit -C -d "$_dotfiles_zcompdump"
+else
+  compinit -d "$_dotfiles_zcompdump"
+fi
+
+_dotfiles_source_files=()
+for _dotfiles_topic_dir in "${_dotfiles_topic_dirs[@]}"
+do
+  _dotfiles_source_files+=("$_dotfiles_topic_dir"/*_completion.zsh(N.))
+done
+
+for _dotfiles_source_file in "${_dotfiles_source_files[@]}"
+do
+  source "$_dotfiles_source_file"
+done
+
+unset _dotfiles_source_file _dotfiles_source_files _dotfiles_topic_dir
+unset _dotfiles_topic_dirs _dotfiles_zcompdump _dotfiles_zcompdump_dir
+unset _dotfiles_zcompdump_files
