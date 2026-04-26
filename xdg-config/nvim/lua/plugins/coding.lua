@@ -1,5 +1,17 @@
 return {
-    { 'nvim-mini/mini.comment', version = '*' },
-    { 'nvim-mini/mini.pairs', version = '*' },
-    { 'nvim-mini/mini.surround', version = '*' },
+    {
+      'nvim-mini/mini.comment',
+      version = '*',
+      opts = {},
+    },
+    {
+      'nvim-mini/mini.pairs',
+      version = '*',
+      opts = {},
+    },
+    {
+      'nvim-mini/mini.surround',
+      version = '*',
+      opts = {},
+    },
 }
