@@ -4,7 +4,7 @@ export CLICOLOR=1
 
 # Load functions
 fpath=($DOT_FILES/functions $fpath)
-autoload -U $DOT_FILES/funtions/*(:t)
+autoload -U $DOT_FILES/functions/*(:t)
 
 # History Configuration
 setopt HISTFILE=~/.zsh_history
