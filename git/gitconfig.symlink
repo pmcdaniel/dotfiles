@@ -1,7 +1,7 @@
 [include]
 	path = ~/.gitconfig.local
 [alias]
-	wtf = !$DOT/bin/git-wtf
+	wtf = !$DOT_FILES/bin/git-wtf
 	count = !git shortlog -sn
 [apply]
 	whitespace = nowarn
