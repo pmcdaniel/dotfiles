@@ -1,0 +1,88 @@
+#!/bin/sh
+#
+# Updates dotfiles and related local tooling.
+
+set -eu
+
+script_dir=$(CDPATH= cd "$(dirname "$0")" && pwd)
+dotfiles_dir=$(CDPATH= cd "${script_dir}/.." && pwd)
+
+usage() {
+  cat <<EOF
+Usage: dot [options]
+
+Update dotfiles and Homebrew.
+
+Options:
+  -e, --edit    Open the dotfiles directory in \$EDITOR
+  -h, --help    Show this help message
+
+With no options, dot will:
+  - Pull the latest changes in ${dotfiles_dir}
+  - Re-run macOS defaults on macOS
+  - Run brew update and brew upgrade when Homebrew is installed
+EOF
+}
+
+run_edit() {
+  if [ -z "${EDITOR:-}" ]; then
+    echo "dot: EDITOR is not set" >&2
+    exit 1
+  fi
+
+  echo "Opening ${dotfiles_dir} in ${EDITOR}..."
+  "$EDITOR" "$dotfiles_dir"
+}
+
+run_update() {
+  echo "Updating dotfiles in ${dotfiles_dir}..."
+  git -C "$dotfiles_dir" pull
+
+  if [ "$(uname -s)" = "Darwin" ]; then
+    defaults_script="${dotfiles_dir}/macos/set-defaults.sh"
+
+    if [ -f "$defaults_script" ]; then
+      echo "Applying macOS defaults..."
+      sh "$defaults_script"
+    else
+      echo "Skipping macOS defaults; ${defaults_script} was not found."
+    fi
+  else
+    echo "Skipping macOS defaults; this is not macOS."
+  fi
+
+  if command -v brew >/dev/null 2>&1; then
+    echo "Updating Homebrew..."
+    brew update
+
+    echo "Upgrading Homebrew packages..."
+    brew upgrade
+  else
+    echo "Skipping Homebrew; brew is not installed."
+  fi
+
+  echo "Dotfiles update complete."
+}
+
+case "${1:-}" in
+  "")
+    run_update
+    ;;
+  -e|--edit)
+    if [ "$#" -ne 1 ]; then
+      echo "dot: -e/--edit does not take additional arguments" >&2
+      usage >&2
+      exit 1
+    fi
+
+    run_edit
+    ;;
+  -h|--help)
+    usage
+    ;;
+  *)
+    echo "dot: unknown option: $1" >&2
+    usage >&2
+    exit 1
+    ;;
+esac
