@@ -7,3 +7,5 @@ alias la="ls -AF --color=auto"
 alias pubkey="clipcopy ~/.ssh/id_ed25519.pub | echo '=> Public key copied to pasteboard.'"
 
 alias cls='clear'
+
+alias vim=nvim
