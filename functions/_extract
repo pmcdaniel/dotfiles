@@ -1,0 +1,23 @@
+#compdef extract
+#autoload
+
+local -a exts=(
+  tar.bz2
+  tar.gz
+  bz2
+  dmg
+  gz
+  tar
+  tbz2
+  tgz
+  zip
+  ZIP
+  pax
+  pax.Z
+  rar
+  Z
+)
+
+_argument \
+  "*::archive file:_files -g '(#i)*.(${(j:|:)exts})(-.)'" \
+  && return 0
