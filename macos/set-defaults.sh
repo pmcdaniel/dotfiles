@@ -16,7 +16,13 @@ echo "Use AirDrop over every interface"
 defaults write com.apple.NetworkBrowser BrowseAllInterfaces 1
 
 echo "Always open everything in Finder's list view"
-defaults write com.apple.Finder FXPreferredViewStyle Nlsv
+defaults write com.apple.finder FXPreferredViewStyle Nlsv
+
+echo "Keep folders on top when sorting by name"
+defaults write com.apple.finder _FXSortFoldersFirst -bool true
+
+echo "When performing a search, search the current folder by default"
+defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
 
 echo "Set the Finder prefs for showing a few different volumes on the Desktop"
 defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true
