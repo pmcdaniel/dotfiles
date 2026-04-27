@@ -23,7 +23,7 @@ max_line_length = 80
 max_line_length = 80
 
 # Git Config Files
-[gitconfig.local.template]
+[gitconfig.local.symlink.template]
 max_line_length = off
 indent_style = tab
 
