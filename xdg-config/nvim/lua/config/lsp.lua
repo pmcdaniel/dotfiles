@@ -207,13 +207,6 @@ M.mason_servers = {
     'yamlls',
 }
 
-M.mason_tools = {
-    'prettierd',
-    'shfmt',
-    'shellcheck',
-    'stylua',
-}
-
 function M.setup()
     for server, config in pairs(M.servers) do
         vim.lsp.config(server, with_capabilities(config))
