@@ -113,3 +113,11 @@ by this repository.
 
 The uninstall command does not remove the repository checkout itself, Homebrew
 packages, app data, or unrelated files in `$HOME` or `$XDG_CONFIG_HOME`.
+
+## Acknowledgements
+
+I have taken a lot of things from different people's dotfiles and/or scripts I 
+found around the internet. Where possible I have tried to attribute those things
+in the code. However, I took a lot of inspiration (read: stole) from two
+dotfiles I liked a lot: [holman/dotfiles](https://github.com/holman/dotfiles/)
+and [rbright/dotfiles](https://github.com/rbright/dotfiles).
