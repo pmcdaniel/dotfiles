@@ -43,7 +43,7 @@ run_update() {
 
     if [ -f "$defaults_script" ]; then
       echo "Applying macOS defaults..."
-      sh "$defaults_script"
+      sudo sh "$defaults_script"
     else
       echo "Skipping macOS defaults; ${defaults_script} was not found."
     fi
