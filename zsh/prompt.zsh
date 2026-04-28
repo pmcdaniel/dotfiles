@@ -66,4 +66,4 @@ _dotfiles_git_prompt() {
   print -r -- " %F{$branch_color}[$branch]%f$remote_status"
 }
 
-PROMPT='%F{white}[%~]%f$(_dotfiles_git_prompt) -> '
+PROMPT='%F{blue}[%~]%f$(_dotfiles_git_prompt) -> '
