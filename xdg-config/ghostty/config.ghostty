@@ -15,4 +15,8 @@ font-thicken-strength = 51
 
 shell-integration-features = no-cursor,no-sudo,no-title
 
+window-inherit-working-directory = false
+tab-inherit-working-directory = true
+split-inherit-working-directory = true
+
 keybind = super+enter=text:\n
