@@ -16,7 +16,7 @@
 defaults write com.apple.NetworkBrowser BrowseAllInterfaces 1
 
 # "Always open everything in Finder's list view"
-defaults write com.apple.finder FXPreferredViewStyle Nlsv
+defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
 
 # "Keep folders on top when sorting by name"
 defaults write com.apple.finder _FXSortFoldersFirst -bool true
@@ -73,6 +73,21 @@ defaults write com.apple.screencapture disable-shadow -bool true
 # "Require password immediately after sleep or screen saver beings"
 defaults write com.apple.screensaver askForPassword -int 1
 defaults write com.apple.screensaver askForPasswordDelay -int 0
+
+# Disable automatic capitalization as it’s annoying when typing code
+defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false
+
+# Disable smart dashes as they’re annoying when typing code
+defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
+
+# Disable automatic period substitution as it’s annoying when typing code
+defaults write NSGlobalDomain NSAutomaticPeriodSubstitutionEnabled -bool false
+
+# Disable smart quotes as they’re annoying when typing code
+defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
+
+# Disable auto-correct
+defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 
 ###############################################################################
 # Keyboard
@@ -134,6 +149,9 @@ defaults write com.apple.dock show-recents -bool false
 
 # "Place the Dock on the left side of the screen"
 defaults write com.apple.dock orientation left
+
+# Show cmd-tab switcher on all displays
+defaults write com.apple.dock appswitcher-all-displays -bool true
 
 ###############################################################################
 # Safari
