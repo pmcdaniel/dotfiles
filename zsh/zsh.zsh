@@ -25,12 +25,15 @@ setopt NO_BG_NICE
 setopt NO_HUP
 
 # UI / Completion Behavior
+unsetopt MENU_COMPLETE
 setopt NO_LIST_BEEP
 setopt PROMPT_SUBST
 setopt CORRECT
 setopt COMPLETE_IN_WORD
 setopt IGNORE_EOF
-setopt complete_aliases
+setopt COMPLETE_ALIASES
+setopt AUTO_MENU
+setopt ALWAYS_TO_END
 
 # Scoping / Traps
 setopt LOCAL_OPTIONS
