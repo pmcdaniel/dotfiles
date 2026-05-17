@@ -11,6 +11,21 @@ _dotfiles_prompt_escape() {
   print -r -- "${1//\%/%%}"
 }
 
+_dotfiles_python_venv_prompt() {
+  local python_version venv_name
+
+  [[ -n "$VIRTUAL_ENV" ]] || return 0
+  (( $+commands[python] )) || return 0
+
+  python_version="$(python -V 2>&1)" || return 0
+  python_version="${python_version#Python }"
+
+  venv_name="$(_dotfiles_prompt_escape "${VIRTUAL_ENV:t}")"
+  python_version="$(_dotfiles_prompt_escape "$python_version")"
+
+  print -r -- "%F{yellow}[🐍 v$python_version ($venv_name)]%f "
+}
+
 _dotfiles_git_branch() {
   local branch
 
@@ -66,4 +81,4 @@ _dotfiles_git_prompt() {
   print -r -- " %F{$branch_color}[$branch]%f$remote_status"
 }
 
-PROMPT='%F{blue}[%~]%f$(_dotfiles_git_prompt) -> '
+PROMPT='$(_dotfiles_python_venv_prompt)%F{blue}[%~]%f$(_dotfiles_git_prompt) -> '
