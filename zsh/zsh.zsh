@@ -31,7 +31,6 @@ setopt PROMPT_SUBST
 setopt CORRECT
 setopt COMPLETE_IN_WORD
 setopt IGNORE_EOF
-setopt COMPLETE_ALIASES
 setopt AUTO_MENU
 setopt ALWAYS_TO_END
 
