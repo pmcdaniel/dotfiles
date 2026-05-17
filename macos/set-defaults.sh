@@ -153,6 +153,9 @@ defaults write com.apple.dock orientation left
 # Show cmd-tab switcher on all displays
 defaults write com.apple.dock appswitcher-all-displays -bool true
 
+# Click wallpaper to show/reveal desktop to Only in Stage Manager.
+defaults write com.apple.WindowManager EnableStandardClickToShowDesktop -bool false
+
 ###############################################################################
 # Safari
 ###############################################################################
